@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,21 +9,77 @@
       href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
       rel="stylesheet"
     />
+    <script src="funcion.js"></script>
   </head>
+
   <body>
     <header class="header">
       <nav class="navbar">
-        <a class="navLink" href="#">Sobre mí</a>
-        <a class="navLink" href="#">Experiencia</a>
-        <a class="navLink" href="#">Proyectos</a>
+        <a
+          class="navLink"
+          onclick="scrollToSection('section1')"
+          data-language="aboutMe"
+          >Sobre mí</a
+        >
+        <a
+          class="navLink"
+          onclick="scrollToSection('section2')"
+          data-language="experience"
+          >Experiencia</a
+        >
+        <a
+          class="navLink"
+          onclick="scrollToSection('section3')"
+          data-language="projects"
+          >Proyectos</a
+        >
+        <div id="flags" class="flags">
+          <div class="flags__item" data-language="es">
+            <img
+              class="flags__img"
+              src="Imagen/es.svg"
+              alt=""
+              onclick="changeLanguage('es')"
+            />
+          </div>
+          <div class="flags__item" data-language="en">
+            <img
+              class="flags__img"
+              src="Imagen/sh.svg"
+              alt=""
+              onclick="changeLanguage('en')"
+            />
+          </div>
+        </div>
       </nav>
     </header>
-
+    <section class="title container">
+      <div class="flex-container">
+        <div class="img">
+          <img
+            src="Imagen/Profile.jpg"
+            style="border-radius: 150%"
+            alt="Profile picture"
+          />
+        </div>
+        <div class="title-text">
+          <h1 data-language="Hello, I am Cristian Fernandez Nessi">
+            Hola, soy Cristian Fernandez Nessi
+          </h1>
+          <p
+            data-language="Web programmer // Fullstack developer // Mobile developer"
+          >
+            Programador web // Desarrollador fullstack // Desarrollador Mobile
+          </p>
+        </div>
+      </div>
+    </section>
     <main class="main">
-      <section class="principalSection container">
-        <img src="Imagen/Profile.jpg" alt="Profile picture" />
-        <h1>Hola, soy Cristian F. Nessi</h1>
-        <p>
+      <section id="section1" class="principalSection container">
+        <h2 data-language="aboutMe">Sobre mí</h2>
+        <p
+          data-language="Junior Web Developer with 1+ year of experience. From Buenos Aires Argentina. Specialized in creating static websites and using the Framework I perfect myself in front end-backend, focusing on React-js delving deeper into JavaScript. My goal is to be a specialist in cybersecurity."
+        >
           Desarrollador Web junior con 1+ año de experiencia. De Buenos Aires
           Argentina. Especializado en crear sitios web estaticos y utilizando el
           Framework Me perfecciono en front end- backend, enfocandome en
@@ -31,7 +87,11 @@
           ciberseguridad.
         </p>
         <ul>
-          <a class="socialButton" href="#">
+          <a
+            class="socialButton"
+            href="https://github.com/CristianNessi"
+            target="_blank"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -46,22 +106,29 @@
             </svg>
             Github
           </a>
-          <a class="socialButton" href="#">
+          <a class="socialButton" href="mailto:cristiannessi.cf@gmail.com">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-envelope"
+              class="bi bi-envelope-at"
               viewBox="0 0 16 16"
             >
               <path
-                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+                d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"
+              />
+              <path
+                d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"
               />
             </svg>
-            Correo
+            <class data-language="Mail">Correo</class>
           </a>
-          <a class="socialButton" href="#">
+          <a
+            class="socialButton"
+            href="https://www.linkedin.com/in/cristian-fnessi/"
+            target="_blank"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -77,10 +144,11 @@
             Linkedin
           </a>
         </ul>
+        <hr class="HR" />
       </section>
 
-      <section class="experienceSection container">
-        <h2>
+      <section id="section2" class="experienceSection container">
+        <h2 data-language="experience">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -99,9 +167,13 @@
         <ol class="experienceList">
           <li class="experienceItemList">
             <div class="decorateCircleList"></div>
-            <time datetime="2024-02">Febrero 15</time>
-            <h3>Princicio de software y aplicacion.</h3>
-            <p>
+            <time datetime="2024-02" data-language="February">Febrero 15</time>
+            <h3 data-language="Principle of software and application.">
+              Princicio de software y aplicacion.
+            </h3>
+            <p
+              data-language='Still working on the design and style. Using tools "Html", "JavaScript", "Python", "Mysql". App, version only "andriod", starting to design for "ios". How is it not finished? I don`t comment on what it is about.'
+            >
               Aun trabajando en el diseñado y estilo. Utilizando herramientas
               "Html", "JavaScript", "Python", "Mysql". App, solo en version
               "andriod", comenzando diseñar para "ios". Como no esta terminada
@@ -110,94 +182,59 @@
           </li>
           <li class="experienceItemList">
             <div class="decorateCircleList"></div>
-            <time datetime="2023-10">Octubre 5</time>
-            <h3>Diseño de proyectos HTML-JAVASCRIPT.</h3>
-            <p>
+            <time datetime="2023-10" data-language="Octuber">Octubre 5</time>
+            <h3 data-language="HTML-JAVASCRIPT project design.">
+              Diseño de proyectos HTML-JAVASCRIPT.
+            </h3>
+            <p
+              data-language="Currently finishing personal projects with the end of explain use and functions of both languages. Both projects are found presenting in repositories on Github. Which They show both the code and the representation on the page Web."
+            >
               Actualmente terminando proyectos personales con el final de
               explicar uso y funciones de ambos lenguajes. Ambos proyectos se
               encuentran presentando en repositorios en Github. Los cuales
               muestran tanto el codigo como tambien la representacion en pagina
               web.
             </p>
-            <a href="">
-              Lear More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-arrow-right"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-                />
-              </svg>
-            </a>
           </li>
           <li class="experienceItemList">
             <div class="decorateCircleList"></div>
-            <time datetime="2021-01">Enero 10</time>
-            <h3>Perfeccionamiento de software de seguridad.</h3>
-            <p>
+            <time datetime="2021-01" data-language="January">Enero 10</time>
+            <h3 data-language="Improvement of security software.">
+              Perfeccionamiento de software de seguridad.
+            </h3>
+            <p
+              data-language="The security company software not designed by me, but yes analyzed security system and license plate programming. doing system quality control, modification, reuse deletion of database data. Implemented in different servers. PostgresSlq database."
+            >
               El sotfwate de empresa de seguridad no diseñado por mi, pero si
               analizaba sistema seguridad y programacion de placas. realizando
               control de calidad de sistema, modificacion , reutilizacion
               eliminacion de datos base de datos. Implementada en distintos
               servidores. Base de datos PostgresSlq.
             </p>
-            <a href="">
-              Lear More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-arrow-right"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-                />
-              </svg>
-            </a>
           </li>
           <li class="experienceItemList">
             <div class="decorateCircleList"></div>
-            <time datetime="2020-03">Marzo 15</time>
-            <h3>Diseño de estructura, estilo y funcionalidad.</h3>
-            <p>
+            <time datetime="2020-03" data-language="March">Marzo 15</time>
+            <h3 data-language="Structure, style and functionality design.">
+              Diseño de estructura, estilo y funcionalidad.
+            </h3>
+            <p
+              data-language='Creation of 10 web pages. With different themes for use Similar. Independently for clients with requirements different. Which implement the use of tools marketing: like MailChimp. And web structure using "html", "Css" and "JavaScript". Front-end design only.'
+            >
               Creacion de 10 paginas web. Con diferentes tematicas para uso
               similares. De manera idependiente para clientes con requisitos
               diferentes. Los cuales implemente el uso de herramientas de
               marketing: como MailChimp. Y estructura web usando "html", "Css" y
               "JavaScript". Solo diseño front-end.
             </p>
-            <a href="">
-              Lear More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-arrow-right"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-                />
-              </svg>
-            </a>
           </li>
         </ol>
-      </section>
-      .
 
-      <section class="proyectSection container">
-        <h2>
+        <hr class="HR" />
+      </section>
+
+      <section id="section3" class="proyectSection container">
+        <h2 data-language="Proyects">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -214,7 +251,7 @@
         </h2>
 
         <article class="proyectItems">
-          <h3>
+          <h3 data-language="Proyect">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -233,14 +270,30 @@
             </svg>
             Proyecto Html
           </h3>
-          <p>
-            En HTML, fue mi primer lenguaje que aprendi, con este lenguaje le
-            encontre sentido a la programacion. Por ser facil de entender y
-            manejar pero hay que hacerlo con delicase para que quede un sitio
-            funcional y bien estructurado. Lo mismo que Css y JavaScript. Son
-            lenguajes que hay que aprender. Por este tambien tengo un paso a
-            paso de su estructura y utilizadad.
-          </p>
+          <input
+            type="checkbox"
+            id="toggleTextHtml"
+            class="read-more-checkbox"
+          />
+          <div class="text-container">
+            <p
+              class="initial-text"
+              data-language="In HTML, it was my first language that I learned, with this language I I found meaning in programming. It can be easy to understand and drive."
+            >
+              En HTML, fue mi primer lenguaje que aprendi, con este lenguaje le
+              encontre sentido a la programacion. Puede ser facil de entender y
+              manejar.
+            </p>
+            <p
+              class="full-text"
+              data-language="However, it must be done delicately so that there is a Functional and well structured site. The same as CSS and JavaScript. They are languages that must be learned. For this one too I have a step by step of its structure and use."
+            >
+              Sin embargo, hay que hacerlo con delicadeza para que quede un
+              sitio funcional y bien estructurado. Lo mismo que Css y
+              JavaScript. Son lenguajes que hay que aprender. Por este tambien
+              tengo un paso a paso de su estructura y utilizadad.
+            </p>
+          </div>
           <div class="containerIcons">
             <div class="html">
               <svg
@@ -257,8 +310,12 @@
             </div>
             <div class="text">HTML</div>
             <div class="more">
-              <a href="">
-                Lear More
+              <label
+                for="toggleTextHtml"
+                class="read-more-label"
+                data-language="Lear more"
+              >
+                Leer mas
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -272,13 +329,13 @@
                     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
                   />
                 </svg>
-              </a>
+              </label>
             </div>
           </div>
         </article>
 
         <article class="proyectItems">
-          <h3>
+          <h3 data-language="Proyect">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -297,16 +354,31 @@
             </svg>
             Proyecto Css
           </h3>
-          <p>
-            Como veran este PORTFOLIO tiene mucho de Css, ya se en la parte web
-            como en la parte responsive. Pero tambien estoy explicando
-            brevemente cada paso de CSS de como modificar y dar estilo a web. Ya
-            tiempo por el mismo, es muy divertido y apasionante hacerlo. Por mi
-            interpretacion tanto HTML como CSS. Son indispensables para por
-            crear una buena interfaz que sea amigable para el usuario. Por es
-            razon, es la que creo un paso a paso del lenguaje para que se pueda
-            utilizar de la mejor manera.
-          </p>
+          <input
+            type="checkbox"
+            id="toggleTextCss"
+            class="read-more-checkbox"
+          />
+          <div class="text-container">
+            <p
+              class="initial-text"
+              data-language="As you will see, this PORTFOLIO has a lot of CSS, I already know in the part web as in the responsive part. But I'm also explaining briefly each CSS step of how to modify and style the website."
+            >
+              Como veran este PORTFOLIO tiene mucho de Css, ya se en la parte
+              web como en la parte responsive. Pero tambien estoy explicando
+              brevemente cada paso de CSS de como modificar y dar estilo a web.
+            </p>
+            <p
+              class="full-text"
+              data-language="For some time now, it is very fun and exciting to do it. By my interpretation both HTML and CSS. They are essential for for creating a good interface that is user friendly. By It is reason, it is what created a step by step of the language so that can use in the best way."
+            >
+              Ya tiempo por el mismo, es muy divertido y apasionante hacerlo.
+              Por mi interpretacion tanto HTML como CSS. Son indispensables para
+              por crear una buena interfaz que sea amigable para el usuario. Por
+              es razon, es la que creo un paso a paso del lenguaje para que se
+              pueda utilizar de la mejor manera.
+            </p>
+          </div>
           <div class="containerIcons">
             <div class="css">
               <svg
@@ -323,7 +395,11 @@
             </div>
             <div class="text">CSS</div>
             <div class="more">
-              <a href="">
+              <label
+                for="toggleTextCss"
+                class="read-more-label"
+                data-language="Lear more"
+              >
                 Leer mas
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -338,13 +414,13 @@
                     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
                   />
                 </svg>
-              </a>
+              </label>
             </div>
           </div>
         </article>
 
         <article class="proyectItems">
-          <h3>
+          <h3 data-language="Proyect">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -363,14 +439,30 @@
             </svg>
             Proyecto JavaScript
           </h3>
-          <p>
-            Estoy realizando la tarea de repasar paso por paso el lenguaje
-            JavaScript, la primer parte ya esta completa y plasmada en mi
-            repositoria de Github. Planeo continuarlo pero me demando mucho
-            tiempo. Voy a llevar una serie de 6 largos proyectos para
-            completarlo. El primero lo pueden ver y aprender es una teroai de 6
-            partes, con 6 practicas que las dividi en capitulos.
-          </p>
+          <input
+            type="checkbox"
+            id="toggleTextJava"
+            class="read-more-checkbox"
+          />
+          <div class="text-container">
+            <p
+              class="initia-text"
+              data-language="I am carrying out the task of reviewing the language step by step JavaScript, the first part is already complete and captured in my Github repository."
+            >
+              Estoy realizando la tarea de repasar paso por paso el lenguaje
+              JavaScript, la primer parte ya esta completa y plasmada en mi
+              repositoria de Github.
+            </p>
+            <p
+              class="full-text"
+              data-language="I plan to continue it but it took a lot of time. I'm going to take one series of 6 long projects to complete it. They can do the first one seeing and learning is a 6-part teroai, with 6 practices that divided into chapters."
+            >
+              Planeo continuarlo pero me demando mucho tiempo. Voy a llevar una
+              serie de 6 largos proyectos para completarlo. El primero lo pueden
+              ver y aprender es una teroai de 6 partes, con 6 practicas que las
+              dividi en capitulos.
+            </p>
+          </div>
           <div class="containerIcons">
             <div class="java">
               <svg
@@ -395,7 +487,11 @@
             </div>
             <div class="text">JavaScript</div>
             <div class="more">
-              <a href="">
+              <label
+                for="toggleTextJava"
+                class="read-more-label"
+                data-language="Lear more"
+              >
                 Leer mas
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -410,13 +506,13 @@
                     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
                   />
                 </svg>
-              </a>
+              </label>
             </div>
           </div>
         </article>
 
         <article class="proyectItems">
-          <h3>
+          <h3 data-language="Software Project">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -435,13 +531,28 @@
             </svg>
             Proyecto Software
           </h3>
-          <p>
-            En este apartado, estoy comenzando con un aplicacion y software
-            nuevo con mucha demanda y mucha posibilidad de crecimiento. Por el
-            momento no esta terminando es la cuestion de por el cual no
-            proporciono muchos datos al respeto. Pero estoy muy entusiasmado en
-            completarlo. Seguire subiendo novedades al respeto.
-          </p>
+          <input
+            type="checkbox"
+            id="toggleTextProyect"
+            class="read-more-checkbox"
+          />
+          <div class="text-container">
+            <p
+              class="initia-text"
+              data-language="In this section, I am starting with a new application and software with a lot of demand and a lot of growth potential."
+            >
+              En este apartado, estoy comenzando con un aplicacion y software
+              nuevo con mucha demanda y mucha posibilidad de crecimiento.
+            </p>
+            <p
+              class="full-text"
+              data-language="At the moment it is not ending, it is the question of why it is not I provide a lot of information in this respect. But I'm very excited in completing it. I will continue uploading news accordingly."
+            >
+              Por el momento no esta terminando es la cuestion de por el cual no
+              proporciono muchos datos al respeto. Pero estoy muy entusiasmado
+              en completarlo. Seguire subiendo novedades al respeto.
+            </p>
+          </div>
           <div class="containerIcons">
             <div class="future">
               <svg
@@ -460,9 +571,13 @@
                 />
               </svg>
             </div>
-            <div class="text">Futuro</div>
+            <div class="text" data-language="Future">Futuro</div>
             <div class="more">
-              <a href="">
+              <label
+                for="toggleTextProyect"
+                class="read-more-label"
+                data-language="Lear more"
+              >
                 Leer mas
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -477,32 +592,31 @@
                     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
                   />
                 </svg>
-              </a>
+              </label>
             </div>
           </div>
         </article>
+        <hr class="HR" />
       </section>
     </main>
 
     <footer class="footer">
       <div class="footerContentContainer container">
-        <span class=""
+        <span data-language="© 2023 "
           >© 2023
-          <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>.
-          All Rights Reserved.
+          <a href="https://flowbite.com/" class="hover:underline"
+            ><class data-language="Nesscri">Nesscri</class>
+            <class data-language="All rights reserved."></class
+          ></a>
         </span>
         <ul class="">
           <li>
-            <a href="#" class="">About</a>
+            <a href="#" data-language="Privacy Policy."
+              >Política de privacidad.</a
+            >
           </li>
           <li>
-            <a href="#" class="">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="#" class="">Licensing</a>
-          </li>
-          <li>
-            <a href="#" class="">Contact</a>
+            <a href="#">Copyright.</a>
           </li>
         </ul>
       </div>
