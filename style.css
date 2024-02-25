@@ -71,6 +71,21 @@ body {
   max-height: max-content;
 }
 
+#goTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
 .container {
   width: 100%;
   max-width: 800px;
@@ -104,8 +119,16 @@ ol {
   font-size: var(--navLink__textSize);
   font-weight: 600;
   color: var(--whiteColor);
-  border: dashed #ecb371b5 5px;
+  border-radius: 20px;
   padding: 7px 7px;
+  background-color: #ffffffc2;
+  color: #000000;
+  transition: transform 0.5s ease-in-out;
+}
+
+.navLink:hover{
+  background-color: var(--buttonSocialColor__hover);
+  transform: scale (1.1);
 }
 
 .navLink:nth-child(1):hover {
@@ -202,9 +225,11 @@ h1 {
   gap: 10px;
 }
 
+
 .principalSection ul a:hover {
   background-color: var(--buttonSocialColor__hover);
   transform: scale(1.1);
+
 }
 
 hr {
@@ -449,16 +474,12 @@ hr {
   color: white;
 }
 
-.footerContentContainer {
-  font-size: 20px;
-  color: gray;
-}
 
 @media (min-width: 700px) {
   .navLink {
     font-size: var(--navLink__textSize);
     font-weight: 600;
-    color: var(--whiteColor);
+    color: black;
   }
 
   .navLink:nth-child(1):hover {
@@ -497,6 +518,13 @@ hr {
   .experienceItemList a:hover {
     background-color: var(--buttonSocialColor__hover);
     transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #goTopBtn {
+      font-size: 14px;
+      padding: 8px;
   }
 }
 
